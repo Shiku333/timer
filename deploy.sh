@@ -10,5 +10,5 @@ cd dist
 git init
 git add -A
 git commit -m 'deploy'
-git push -f git@github.com:Shiku333/online-timer.git master:gh-pages
+git push -f git@github.com:Shiku333/timer.git master:gh-pages
 cd -
