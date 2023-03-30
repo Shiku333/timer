@@ -1,3 +1,16 @@
+<!--
+
+  + | clean descriptive var names
+  + | easy to read along syntax
+  + | well structured code
+
+  - | make use of given component logic
+  - | use html elements in the correct structure
+  - | use html elements for the purpose they're invented for
+  - | use ";"
+
+-->
+
 <template>
   <div style="margin-top: 10vh;">
 
@@ -7,18 +20,21 @@
     <h2 style="color: timeColor">{{ displayClock }}</h2>
     
 
+    <!-- FIXME: use v-if for hidden elements -->
     <h3 hidden>Times up.</h3>
 
     <button v-if="paused == true && timer > 0" @click="paused = false, startTimer()">Start</button>
     <button v-else-if="paused == false && timer > 0" @click="pauseTimer">Pause</button>
     <button v-else disabled>Start</button>
 
+    <!-- FIXME: never use <br> -->
     <br>
     <br>
 
     <button @click="showControls = !showControls">Show controls</button>
 
     <div v-if="showControls">
+      <!-- FIXME: outsource same elements/functionality -->
       <div>
         <button @click="timer++">+1s</button>
         <button @click="timer--">-1s</button>
@@ -64,8 +80,9 @@
     </div>
     
 
-
+    <!-- FIXME: try to not use inline styles, use classes and the style section instead -->
     <footer style="position: absolute; bottom: 2px; width: 100%;">
+      <!-- space between the brackets provided better readability {{ varName }} -->
       <p @mouseover="changeHeart" style="">created with {{heart}} by Johan</p>
     </footer>
 
@@ -76,6 +93,7 @@
 
 export default {
   name: 'App',
+  // if you dont use instanceof, get rid of it (comment or remove)
   components: {
   },
   data(){
